@@ -191,6 +191,27 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: '#9e9e9e',
   },
+  backgroundPokemons: {
+    width: DIMENSION_WIDTH,
+    height: DIMENSION_HEIGHT,
+  },
+  MenuBurgerButton: {
+    width: 40,
+    height: 40,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    //marginHorizontal: 7,
+    borderRadius: 30,
+  },
+  MenuBurgerButtonContainer: {
+    backgroundColor: 'rgba(0,0,0,0)',
+    width: 40,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 30,
+  },
 });
 
 export default styles;

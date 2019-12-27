@@ -1,10 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ImageBackground} from 'react-native';
+import styles from '../assets/styles';
 
 const PokemonsScreen = () => {
   return (
     <View>
-      <Text>pokemons</Text>
+      <ImageBackground
+        source={require('../assets/images/pokeball.png')}
+        style={styles.backgroundPokemons}
+        imageStyle={styles.pokeballBG}></ImageBackground>
     </View>
   );
 };
