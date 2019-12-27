@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StatusBar} from 'react-native';
 import styles from './assets/styles';
 
-import HomeScreen from './screens/HomeScreen';
+import BaseNavigation from './BaseNavigation';
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <HomeScreen />
+      <BaseNavigation />
     </View>
   );
 };

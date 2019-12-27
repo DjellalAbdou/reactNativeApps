@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import HomeCategorie from '../components/HomeCategorie';
 import News from '../components/News';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [scrollY, setScrollY] = useState(new Animated.Value(0));
   const viewHeight = Dimensions.get('window').height - 180;
   const onScroll = Animated.event([
@@ -25,6 +25,10 @@ const HomeScreen = () => {
       },
     },
   ]);
+
+  const onPress = gotoScreen => {
+    navigation.navigate(gotoScreen);
+  };
 
   const backgroundColor = scrollY.interpolate({
     inputRange: [0, viewHeight - 130, viewHeight - 80],
@@ -71,28 +75,61 @@ const HomeScreen = () => {
             {/* categories Components */}
 
             <View style={styles.categoriesContainer}>
-              <HomeCategorie color="5dc3a8" name="pokedex" />
-              <HomeCategorie color="ed6252" name="moves" />
-              <HomeCategorie color="409cee" name="abilities" />
-              <HomeCategorie color="f6c946" name="items" />
-              <HomeCategorie color="7c528d" name="locations" />
-              <HomeCategorie color="b3736c" name="type charts" />
+              <HomeCategorie
+                {...{onPress}}
+                gotoScreen="Pokemons"
+                color="5dc3a8"
+                name="pokedex"
+              />
+              <HomeCategorie
+                {...{onPress}}
+                gotoScreen="Pokemons"
+                color="ed6252"
+                name="moves"
+              />
+              <HomeCategorie
+                {...{onPress}}
+                gotoScreen="Pokemons"
+                color="409cee"
+                name="abilities"
+              />
+              <HomeCategorie
+                {...{onPress}}
+                gotoScreen="Pokemons"
+                color="f6c946"
+                name="items"
+              />
+              <HomeCategorie
+                {...{onPress}}
+                gotoScreen="Pokemons"
+                color="7c528d"
+                name="locations"
+              />
+              <HomeCategorie
+                {...{onPress}}
+                goto="Pokemons"
+                color="b3736c"
+                name="type charts"
+              />
             </View>
           </ImageBackground>
         </Animated.View>
-        <View style={styles.fullNewsTitleContainer}>
-          <Text style={styles.fullNewsTitle}>Top 10 News</Text>
-          <Text style={styles.fullNewsSeeAll}>view all</Text>
-        </View>
-        <News />
-        <News />
-        <News />
-        <News />
-        <News />
-        <News />
-        <News />
-        <News />
-        <News />
+        <ScrollView nestedScrollEnabled horizontal={false}>
+          <View style={styles.fullNewsTitleContainer}>
+            <Text style={styles.fullNewsTitle}>Top 10 News</Text>
+            <Text style={styles.fullNewsSeeAll}>view all</Text>
+          </View>
+
+          <News />
+          <News />
+          <News />
+          <News />
+          <News />
+          <News />
+          <News />
+          <News />
+          <News />
+        </ScrollView>
       </ScrollView>
     </View>
   );

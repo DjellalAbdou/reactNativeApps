@@ -3,13 +3,14 @@ import {View, Text, ImageBackground, TouchableOpacity} from 'react-native';
 import styles from '../assets/styles';
 import pokeBall from '../assets/images/pokeball.png';
 
-const HomeCategorie = ({color, name}) => {
+const HomeCategorie = ({color, name, onPress, gotoScreen}) => {
   const catStyle = {
     backgroundColor: '#' + color,
     shadowColor: '#' + color,
   };
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => onPress(gotoScreen)}>
       <View style={[styles.categorie, catStyle]}>
         <ImageBackground
           imageStyle={styles.BGCatLeft}
