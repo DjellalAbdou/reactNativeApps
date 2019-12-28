@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground, ScrollView} from 'react-native';
 import styles from '../assets/styles';
+import PokeCard from '../components/PokeCard';
 
 const PokemonsScreen = () => {
   return (
@@ -8,7 +9,27 @@ const PokemonsScreen = () => {
       <ImageBackground
         source={require('../assets/images/pokeball.png')}
         style={styles.backgroundPokemons}
-        imageStyle={styles.pokeballBG}></ImageBackground>
+        imageStyle={styles.pokeballBG}>
+        <ScrollView style={{marginTop: 180}}>
+          <View style={styles.pokemonsContainer}>
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+            <PokeCard />
+          </View>
+        </ScrollView>
+      </ImageBackground>
     </View>
   );
 };

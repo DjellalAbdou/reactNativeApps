@@ -6,7 +6,8 @@ import {
 } from 'react-navigation-stack';
 import HomeScreen from './screens/HomeScreen';
 import PokemonScreen from './screens/PokemonsScreen';
-import MenuBurger from './components/MenuBurger';
+import HeaderTitle from './components/HeaderTitle';
+import HeaderPokemons from './components/HeaderPokemons';
 
 const BaseNavigation = createStackNavigator(
   {
@@ -18,22 +19,17 @@ const BaseNavigation = createStackNavigator(
     },
     Pokemons: {
       screen: PokemonScreen,
-      navigationOptions: {
+      navigationOptions: ({navigation}) => ({
         headerTransparent: true,
         gesturesEnabled: true,
-        headerRight: <MenuBurger />,
-        headerLeftContainerStyle: {
-          marginTop: 30,
-        },
-        headerRightContainerStyle: {
-          //paddingTop: 30,
-          marginTop: 30,
-          marginRight: 23,
-        },
+        headerLeft: (
+          <HeaderPokemons navigation={navigation} gotoScreen="Home" />
+        ),
         headerStyle: {
-          height: 100,
+          height: 180,
         },
-      },
+        headerTitle: <HeaderTitle />,
+      }),
     },
   },
   {
