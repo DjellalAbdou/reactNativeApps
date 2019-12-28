@@ -2,7 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const DIMENSION_WIDTH = Dimensions.get('window').width;
 const DIMENSION_HEIGHT = Dimensions.get('window').height;
-
+const DIMENSION_HEIGHT_status = Dimensions.get('screen').height;
 const WHITE = '#ffffff';
 const BLACK = '#000000';
 const GRAY = '#f5f5f5';
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   },
   backgroundPokemons: {
     width: DIMENSION_WIDTH,
-    height: DIMENSION_HEIGHT,
+    height: DIMENSION_HEIGHT_status,
   },
   MenuBurgerButton: {
     width: 40,
@@ -242,17 +242,20 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   pokemonsContainer: {
-    paddingTop: 180,
+    //marginTop: 180,
+    marginTop: 10,
+    paddingBottom: 20,
     paddingHorizontal: 30,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    //alignItems: 'center',
+    width: DIMENSION_WIDTH,
+    //justifyContent: 'space-between',
   },
   pokeCard: {
     width: DIMENSION_WIDTH / 2 - 35,
     height: 105,
     backgroundColor: '#59e0c0',
     borderRadius: 15,
+    marginBottom: 10,
   },
   pokeCardBackground: {
     width: DIMENSION_WIDTH / 2 - 35,
@@ -327,6 +330,14 @@ const styles = StyleSheet.create({
   pokeCardImageContainer: {
     paddingBottom: 7,
     paddingRight: 15,
+  },
+  pokemonsColContainer: {
+    //flex: 1,
+    justifyContent: 'space-between',
+
+    //paddingRight: 0,
+    //alignItems: 'center',
+    //width: DIMENSION_WIDTH / 2,
   },
 });
 
