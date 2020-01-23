@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from '../assets/styles';
 import Ripple from 'react-native-material-ripple';
 
-const IconRippleButton = ({size, name, onPress, gotoScreen}) => {
+const IconRippleButton = ({color, size, name, onPress, gotoScreen}) => {
   return (
     <Ripple
       onPress={() => onPress(gotoScreen)}
@@ -14,7 +14,7 @@ const IconRippleButton = ({size, name, onPress, gotoScreen}) => {
       rippleContainerBorderRadius={30}>
       <View style={styles.MenuBurgerButtonContainer}>
         <Text>
-          <Icon name={name} size={size} color="#000000" />
+          <Icon name={name} size={size} color={color} />
         </Text>
       </View>
     </Ripple>

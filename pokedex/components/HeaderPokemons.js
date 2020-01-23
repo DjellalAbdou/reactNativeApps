@@ -13,8 +13,14 @@ const HeaderPokemons = ({navigation, gotoScreen}) => {
         {...{onPress, gotoScreen}}
         size={25}
         name="arrow-back"
+        color="#000000"
       />
-      <IconRippleButton {...{onPress, gotoScreen}} size={25} name="menu" />
+      <IconRippleButton
+        color="#000000"
+        {...{onPress, gotoScreen}}
+        size={25}
+        name="menu"
+      />
     </View>
   );
 };

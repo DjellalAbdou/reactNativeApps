@@ -8,17 +8,20 @@ import HomeScreen from './screens/HomeScreen';
 import PokemonScreen from './screens/PokemonsScreen';
 import HeaderTitle from './components/HeaderTitle';
 import HeaderPokemons from './components/HeaderPokemons';
+import PokemonsInfoScreen from './screens/PokemonsInfoScreen';
+import HeaderPokeInfo from './components/HeaderPokeInfo';
+import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
 
 const BaseNavigation = createStackNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: gestureHandlerRootHOC(HomeScreen),
       navigationOptions: {
         headerShown: false,
       },
     },
     Pokemons: {
-      screen: PokemonScreen,
+      screen: gestureHandlerRootHOC(PokemonScreen),
       navigationOptions: ({navigation}) => ({
         headerTransparent: true,
         gesturesEnabled: true,
@@ -29,6 +32,19 @@ const BaseNavigation = createStackNavigator(
           height: 180,
         },
         headerTitle: <HeaderTitle />,
+      }),
+    },
+    PokeInfo: {
+      screen: gestureHandlerRootHOC(PokemonsInfoScreen),
+      navigationOptions: ({navigation}) => ({
+        headerTransparent: true,
+        gesturesEnabled: true,
+        headerStyle: {
+          height: 140,
+        },
+        headerLeft: (
+          <HeaderPokeInfo navigation={navigation} gotoScreen="Home" />
+        ),
       }),
     },
   },

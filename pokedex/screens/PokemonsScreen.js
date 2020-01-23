@@ -4,7 +4,10 @@ import styles from '../assets/styles';
 import PokeCard from '../components/PokeCard';
 import DATA from '../assets/data/pokemon';
 
-const PokemonsScreen = () => {
+const PokemonsScreen = ({navigation}) => {
+  const onPress = gotoscreen => {
+    navigation.navigate(gotoscreen);
+  };
   return (
     <View>
       <ImageBackground
@@ -19,7 +22,9 @@ const PokemonsScreen = () => {
           //centerContent
           data={DATA}
           numColumns={2}
-          renderItem={({item}) => <PokeCard {...item} />}
+          renderItem={({item}) => (
+            <PokeCard gotoscreen="PokeInfo" {...{onPress}} {...item} />
+          )}
         />
         {/* <ScrollView style={{marginTop: 180}}>
           <View style={styles.pokemonsContainer}>

@@ -9,7 +9,7 @@ import {
 import styles from '../assets/styles';
 import baseColors from './baseColors';
 
-const PokeCard = ({id, name, imageurl, typeofpokemon}) => {
+const PokeCard = ({id, name, imageurl, gotoscreen, typeofpokemon, onPress}) => {
   const renderTypes = () => {
     return typeofpokemon.map(type => (
       <View key={type} style={styles.categoriePokeCardContainer}>
@@ -23,7 +23,9 @@ const PokeCard = ({id, name, imageurl, typeofpokemon}) => {
       : baseColors[typeofpokemon[0].toLowerCase()];
   //console.log(imageurl);
   return (
-    <TouchableOpacity style={[styles.pokeCard, {backgroundColor: bgcolor}]}>
+    <TouchableOpacity
+      onPress={() => onPress(gotoscreen)}
+      style={[styles.pokeCard, {backgroundColor: bgcolor}]}>
       <ImageBackground
         style={styles.pokeCardBackground}
         imageStyle={styles.pokeCardBGIcon}
