@@ -10,15 +10,15 @@ the project is currently paused for a long time for educational reasons, but i p
 
 - **Home :** 
 
-![](./assets/images/home.jpg)
+<img src="./assets/images/home.jpg" height="500px" />
 
 - **Galery :**
 
-![](./assets/images/pokegalery.jpg)
+<img src="./assets/images/pokegalery.jpg" height="500px" />
 
 - **Pokemon Info :**
 
-![](./assets/images/pckemondetails.jpg)
+<img src="./assets/images/pckemondetails.jpg" height="500px" />
 
 ## How to run ?
 
