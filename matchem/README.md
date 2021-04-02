@@ -6,7 +6,6 @@ this app contains only the front end and the navigation without any implementati
 
 this project can help new react native devs in getting used to different native components and the use of custom styling while following a proper design.
 
-(i didn't test the code in ios because i don't have one :'( )
 
 ## how does the app look
 
